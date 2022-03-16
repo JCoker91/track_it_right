@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="487.236" height="84.213" viewBox="0 0 487.236 84.213">
+  <g id="Group_12" data-name="Group 12" transform="translate(553.236 -104.573)">
+    <g id="Group_4" data-name="Group 4" transform="translate(-553.236 104.573)">
+      <path id="bars-staggered-solid" d="M0,68.5A4.5,4.5,0,0,1,4.5,64H58.453a4.5,4.5,0,1,1,0,8.993H4.5A4.494,4.494,0,0,1,0,68.5ZM8.993,90.978a4.494,4.494,0,0,1,4.5-4.5H457.752c2.487,0,13.01,2.009,13.01,4.5s-10.523,4.5-13.01,4.5H13.489A4.494,4.494,0,0,1,8.993,90.978Zm49.46,26.978H4.5a4.5,4.5,0,0,1,0-8.993H58.453a4.5,4.5,0,1,1,0,8.993Z" transform="translate(0 -64)" fill="#2979f2"/>
+      <path id="Polygon_3" data-name="Polygon 3" d="M21,0,42,38H0Z" transform="translate(487.236 6.427) rotate(90)" fill="#2979f2"/>
+    </g>
+    <text id="RIGHT" transform="translate(-300 173.787)" fill="#e8eaeb" font-size="59" font-family="SegoeUI-Bold, Segoe UI" font-weight="700"><tspan x="0" y="0">RIGHT</tspan></text>
+    <text id="track-it" transform="translate(-482 171.787)" fill="#e8eaeb" font-size="47" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">track-it</tspan></text>
+  </g>
+</svg>

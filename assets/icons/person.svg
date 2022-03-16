@@ -1,0 +1,4 @@
+<svg id="person" xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54">
+  <path id="Path_10" data-name="Path 10" d="M0,0H54V54H0Z" fill="none"/>
+  <path id="Path_11" data-name="Path 11" d="M22,22a9,9,0,1,0-9-9A9,9,0,0,0,22,22Zm0,4.5c-6.007,0-18,3.015-18,9V40H40V35.5C40,29.515,28.007,26.5,22,26.5Z" transform="translate(5 5)" fill="#fff"/>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="106.236" height="53.956" viewBox="0 0 106.236 53.956">
+  <g id="Group_5" data-name="Group 5" transform="translate(553.236 -104.573)">
+    <g id="Group_4" data-name="Group 4" transform="translate(-553.236 104.573)">
+      <path id="bars-staggered-solid" d="M0,68.5A4.5,4.5,0,0,1,4.5,64H58.453a4.5,4.5,0,1,1,0,8.993H4.5A4.494,4.494,0,0,1,0,68.5ZM8.993,90.978a4.494,4.494,0,0,1,4.5-4.5h55.6c2.487,0,7.406,2.009,7.406,4.5s-4.919,4.5-7.406,4.5h-55.6A4.494,4.494,0,0,1,8.993,90.978Zm49.46,26.978H4.5a4.5,4.5,0,0,1,0-8.993H58.453a4.5,4.5,0,1,1,0,8.993Z" transform="translate(0 -64)" fill="#2979f2"/>
+      <path id="Polygon_3" data-name="Polygon 3" d="M21,0,42,38H0Z" transform="translate(106.236 5.978) rotate(90)" fill="#2979f2"/>
+    </g>
+  </g>
+</svg>
