@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:track_it_right/constants/constants.dart';
 import 'package:track_it_right/constants/responsive.dart';
+import 'package:track_it_right/screens/components/assets_by_category.dart';
 // import 'package:responsive_admin_dashboard/screens/components/analytic_cards.dart';
 import 'package:track_it_right/screens/components/custom_appbar.dart';
 import 'package:track_it_right/screens/components/users_by_device.dart';
@@ -27,7 +28,24 @@ class DashboardContent extends StatelessWidget {
             SizedBox(
               height: appPadding,
             ),
-            UsersByDevice()
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: Padding(
+                    padding: const EdgeInsets.all(appPadding),
+                    child: UsersByDevice(),
+                  ),
+                ),
+                Expanded(
+                    flex: 3,
+                    child: Padding(
+                      padding: const EdgeInsets.all(appPadding),
+                      child: AssetsByCategory(),
+                    )),
+              ],
+            ),
           ],
         ),
       ),
