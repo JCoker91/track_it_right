@@ -8,13 +8,30 @@ class UsersByDevice extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: appPadding),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: widgetColor,
       ),
-      // color: widgetColor,
+      margin: EdgeInsets.fromLTRB(
+        appPaddingDouble,
+        appPadding,
+        appPadding,
+        appPadding,
+      ),
       height: 300,
+      child: _PieChart(),
+    );
+  }
+}
+
+class _PieChart extends StatelessWidget {
+  const _PieChart({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
       padding: const EdgeInsets.all(appPadding),
       child: AspectRatio(
         aspectRatio: 1.3,

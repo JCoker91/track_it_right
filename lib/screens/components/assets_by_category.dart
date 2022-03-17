@@ -8,12 +8,30 @@ class AssetsByCategory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(right: appPadding),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: widgetColor,
       ),
       height: 300,
+      margin: EdgeInsets.fromLTRB(
+        appPadding,
+        appPadding,
+        appPaddingDouble,
+        appPadding,
+      ),
+      child: _BarChart(),
+    );
+  }
+}
+
+class _BarChart extends StatelessWidget {
+  const _BarChart({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
       padding: const EdgeInsets.all(appPadding),
       child: BarChart(
         BarChartData(

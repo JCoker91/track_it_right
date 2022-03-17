@@ -13,3 +13,5 @@ const pinkAccent = Color.fromRGBO(242, 41, 134, 1);
 
 // Default App Padding
 const appPadding = 16.0;
+const appPaddingDouble = 32.0;
+const appPaddingHalf = 8.0;
