@@ -9,6 +9,13 @@ class UsersByDevice extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black38,
+            offset: Offset(2.0, 8.0), //(x,y)
+            blurRadius: 6.0,
+          ),
+        ],
         borderRadius: BorderRadius.circular(20),
         color: widgetColor,
       ),

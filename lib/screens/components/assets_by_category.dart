@@ -11,6 +11,13 @@ class AssetsByCategory extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: widgetColor,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black38,
+            offset: Offset(2.0, 8.0), //(x,y)
+            blurRadius: 6.0,
+          ),
+        ],
       ),
       height: 300,
       margin: EdgeInsets.fromLTRB(
@@ -35,6 +42,42 @@ class _BarChart extends StatelessWidget {
       padding: const EdgeInsets.all(appPadding),
       child: BarChart(
         BarChartData(
+          titlesData: FlTitlesData(
+            show: true,
+            rightTitles: SideTitles(showTitles: false),
+            topTitles: SideTitles(showTitles: false),
+            bottomTitles: SideTitles(
+              showTitles: true,
+              getTextStyles: (context, value) => const TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 14),
+              margin: 16,
+              getTitles: (double value) {
+                switch (value.toInt()) {
+                  case 0:
+                    return 'Monday';
+                  case 1:
+                    return 'T';
+                  case 2:
+                    return 'W';
+                  case 3:
+                    return 'T';
+                  case 4:
+                    return 'F';
+                  case 5:
+                    return 'S';
+                  case 6:
+                    return 'S';
+                  default:
+                    return '';
+                }
+              },
+            ),
+            leftTitles: SideTitles(
+              showTitles: false,
+            ),
+          ),
           barGroups: [
             BarChartGroupData(
               x: 0,
@@ -53,6 +96,9 @@ class _BarChart extends StatelessWidget {
                   colors: [orangeAccent],
                   y: 55,
                   width: 20,
+                  backDrawRodData: BackgroundBarChartRodData(
+                    show: true,
+                  ),
                 ),
               ],
             ),
