@@ -26,7 +26,28 @@ class UsersByDevice extends StatelessWidget {
         appPadding,
       ),
       height: 300,
-      child: _PieChart(),
+      child: Column(
+        children: [
+          Expanded(
+            child: Container(
+              alignment: Alignment.center,
+              child: Text(
+                "Asset Status",
+                style: TextStyle(
+                  color: whiteColor,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            flex: 1,
+          ),
+          Expanded(
+            flex: 3,
+            child: _PieChart(),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -57,7 +78,9 @@ class _PieChart extends StatelessWidget {
                     ),
                     color: bluePrimary,
                     showTitle: true,
-                    title: "Active",
+                    title:
+                        ((560 / (560 + 220 + 110)) * 100).floor().toString() +
+                            "%",
                     value: 560,
                   ),
                   PieChartSectionData(
@@ -66,7 +89,9 @@ class _PieChart extends StatelessWidget {
                     ),
                     color: orangeAccent,
                     showTitle: true,
-                    title: "Pending",
+                    title:
+                        ((220 / (560 + 220 + 110)) * 100).floor().toString() +
+                            "%",
                     value: 220,
                   ),
                   PieChartSectionData(
@@ -75,7 +100,9 @@ class _PieChart extends StatelessWidget {
                     ),
                     color: pinkAccent,
                     showTitle: true,
-                    title: "Discarded",
+                    title:
+                        ((110 / (560 + 220 + 110)) * 100).floor().toString() +
+                            "%",
                     value: 110,
                   ),
                 ],

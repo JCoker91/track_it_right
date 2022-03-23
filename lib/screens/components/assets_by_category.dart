@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:track_it_right/constants/constants.dart';
 import 'package:fl_chart/fl_chart.dart';
 
@@ -26,7 +27,28 @@ class AssetsByCategory extends StatelessWidget {
         appPaddingDouble,
         appPadding,
       ),
-      child: _BarChart(),
+      child: Column(
+        children: [
+          Expanded(
+            child: Container(
+              alignment: Alignment.center,
+              child: Text(
+                "Assets by Categories",
+                style: TextStyle(
+                  color: whiteColor,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            flex: 1,
+          ),
+          Expanded(
+            child: _BarChart(),
+            flex: 3,
+          ),
+        ],
+      ),
     );
   }
 }
@@ -38,10 +60,16 @@ class _BarChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double barGroupWidth = MediaQuery.of(context).size.width * .02;
+    double barGroupSpace = MediaQuery.of(context).size.width * .05;
     return Padding(
       padding: const EdgeInsets.all(appPadding),
       child: BarChart(
         BarChartData(
+          borderData: FlBorderData(
+            show: false,
+          ),
+          groupsSpace: barGroupSpace,
           titlesData: FlTitlesData(
             show: true,
             rightTitles: SideTitles(showTitles: false),
@@ -52,30 +80,32 @@ class _BarChart extends StatelessWidget {
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 14),
-              margin: 16,
               getTitles: (double value) {
                 switch (value.toInt()) {
                   case 0:
-                    return 'Monday';
+                    return 'Desktop';
                   case 1:
-                    return 'T';
+                    return 'Laptop';
                   case 2:
-                    return 'W';
+                    return 'Monitor';
                   case 3:
-                    return 'T';
+                    return 'Phone';
                   case 4:
-                    return 'F';
-                  case 5:
-                    return 'S';
-                  case 6:
-                    return 'S';
+                    return 'Tablet';
                   default:
-                    return '';
+                    return 'Other';
                 }
               },
             ),
             leftTitles: SideTitles(
-              showTitles: false,
+              showTitles: true,
+              getTextStyles: (context, value) => const TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 14),
+              getTitles: (double value) {
+                return value % 10 == 0 ? value.toString() : '';
+              },
             ),
           ),
           barGroups: [
@@ -83,32 +113,62 @@ class _BarChart extends StatelessWidget {
               x: 0,
               barRods: [
                 BarChartRodData(
-                  width: 20,
+                  width: barGroupWidth,
                   colors: [greenAccent],
                   y: 5,
                 ),
               ],
             ),
             BarChartGroupData(
-              x: 0,
+              x: 1,
               barRods: [
                 BarChartRodData(
                   colors: [orangeAccent],
                   y: 55,
-                  width: 20,
-                  backDrawRodData: BackgroundBarChartRodData(
-                    show: true,
-                  ),
+                  width: barGroupWidth,
+                  // backDrawRodData: BackgroundBarChartRodData(
+                  //   show: true,
+                  // ),
                 ),
               ],
             ),
             BarChartGroupData(
-              x: 0,
+              x: 2,
               barRods: [
                 BarChartRodData(
                   colors: [bluePrimary],
                   y: 34,
-                  width: 20,
+                  width: barGroupWidth,
+                ),
+              ],
+            ),
+            BarChartGroupData(
+              x: 3,
+              barRods: [
+                BarChartRodData(
+                  colors: [pinkAccent],
+                  y: 14,
+                  width: barGroupWidth,
+                ),
+              ],
+            ),
+            BarChartGroupData(
+              x: 4,
+              barRods: [
+                BarChartRodData(
+                  colors: [yellowAccent],
+                  y: 44,
+                  width: barGroupWidth,
+                ),
+              ],
+            ),
+            BarChartGroupData(
+              x: 5,
+              barRods: [
+                BarChartRodData(
+                  colors: [whiteColor],
+                  y: 2,
+                  width: barGroupWidth,
                 ),
               ],
             ),
