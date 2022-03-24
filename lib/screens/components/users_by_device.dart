@@ -30,7 +30,8 @@ class UsersByDevice extends StatelessWidget {
         children: [
           Expanded(
             child: Container(
-              alignment: Alignment.center,
+              alignment: Alignment.centerLeft,
+              padding: EdgeInsets.only(left: appPadding, top: appPadding),
               child: Text(
                 "Asset Status",
                 style: TextStyle(
@@ -41,6 +42,104 @@ class UsersByDevice extends StatelessWidget {
               ),
             ),
             flex: 1,
+          ),
+          Expanded(
+            flex: 1,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Row(
+                  children: [
+                    Text(
+                      "Active",
+                      style: TextStyle(
+                        color: whiteColor,
+                      ),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            color: darkColor,
+                            blurRadius: 6,
+                            offset: Offset(0, 5),
+                          ),
+                        ],
+                        color: bluePrimary,
+                        border: Border.all(
+                          color: darkColor,
+                        ),
+                      ),
+                      margin: EdgeInsets.only(
+                        left: appPaddingHalf,
+                      ),
+                      height: appPadding,
+                      width: appPadding,
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Text(
+                      "Pending",
+                      style: TextStyle(
+                        color: whiteColor,
+                      ),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            color: darkColor,
+                            blurRadius: 6,
+                            offset: Offset(0, 5),
+                          ),
+                        ],
+                        color: orangeAccent,
+                        border: Border.all(
+                          color: darkColor,
+                        ),
+                      ),
+                      margin: EdgeInsets.only(
+                        left: appPaddingHalf,
+                      ),
+                      height: appPadding,
+                      width: appPadding,
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Text(
+                      "Discarded",
+                      style: TextStyle(
+                        color: whiteColor,
+                      ),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            color: darkColor,
+                            blurRadius: 6,
+                            offset: Offset(0, 5),
+                          ),
+                        ],
+                        color: pinkAccent,
+                        border: Border.all(
+                          color: darkColor,
+                        ),
+                      ),
+                      margin: EdgeInsets.only(
+                        left: appPaddingHalf,
+                      ),
+                      height: appPadding,
+                      width: appPadding,
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
           Expanded(
             flex: 3,
@@ -61,54 +160,39 @@ class _PieChart extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(appPadding),
-      child: AspectRatio(
-        aspectRatio: 1.3,
-        child: Card(
-          color: widgetColor,
-          child: AspectRatio(
-            aspectRatio: 1,
-            child: PieChart(
-              PieChartData(
-                sectionsSpace: 2,
-                centerSpaceRadius: double.infinity,
-                sections: [
-                  PieChartSectionData(
-                    titleStyle: TextStyle(
-                      color: whiteColor,
-                    ),
-                    color: bluePrimary,
-                    showTitle: true,
-                    title:
-                        ((560 / (560 + 220 + 110)) * 100).floor().toString() +
-                            "%",
-                    value: 560,
-                  ),
-                  PieChartSectionData(
-                    titleStyle: TextStyle(
-                      color: whiteColor,
-                    ),
-                    color: orangeAccent,
-                    showTitle: true,
-                    title:
-                        ((220 / (560 + 220 + 110)) * 100).floor().toString() +
-                            "%",
-                    value: 220,
-                  ),
-                  PieChartSectionData(
-                    titleStyle: TextStyle(
-                      color: whiteColor,
-                    ),
-                    color: pinkAccent,
-                    showTitle: true,
-                    title:
-                        ((110 / (560 + 220 + 110)) * 100).floor().toString() +
-                            "%",
-                    value: 110,
-                  ),
-                ],
+      child: PieChart(
+        PieChartData(
+          sectionsSpace: 2,
+          centerSpaceRadius: double.infinity,
+          sections: [
+            PieChartSectionData(
+              titleStyle: TextStyle(
+                color: whiteColor,
               ),
+              color: bluePrimary,
+              showTitle: true,
+              title: ((560 / (560 + 220 + 110)) * 100).floor().toString() + "%",
+              value: 560,
             ),
-          ),
+            PieChartSectionData(
+              titleStyle: TextStyle(
+                color: whiteColor,
+              ),
+              color: orangeAccent,
+              showTitle: true,
+              title: ((220 / (560 + 220 + 110)) * 100).floor().toString() + "%",
+              value: 220,
+            ),
+            PieChartSectionData(
+              titleStyle: TextStyle(
+                color: whiteColor,
+              ),
+              color: pinkAccent,
+              showTitle: true,
+              title: ((110 / (560 + 220 + 110)) * 100).floor().toString() + "%",
+              value: 110,
+            ),
+          ],
         ),
       ),
     );

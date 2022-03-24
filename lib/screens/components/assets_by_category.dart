@@ -31,7 +31,8 @@ class AssetsByCategory extends StatelessWidget {
         children: [
           Expanded(
             child: Container(
-              alignment: Alignment.center,
+              alignment: Alignment.centerLeft,
+              padding: EdgeInsets.only(left: appPadding, top: appPadding),
               child: Text(
                 "Assets by Categories",
                 style: TextStyle(
@@ -66,6 +67,9 @@ class _BarChart extends StatelessWidget {
       padding: const EdgeInsets.all(appPadding),
       child: BarChart(
         BarChartData(
+          barTouchData: BarTouchData(
+              touchTooltipData: BarTouchTooltipData(tooltipBgColor: darkColor)),
+          minY: 0,
           borderData: FlBorderData(
             show: false,
           ),

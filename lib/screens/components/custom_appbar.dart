@@ -13,6 +13,7 @@ class CustomAppbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 72,
       color: widgetColor,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
@@ -37,7 +38,6 @@ class CustomAppbar extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 child: Image.asset(
                   'assets/images/logo.png',
-                  height: 50,
                 ),
               ),
             ),
